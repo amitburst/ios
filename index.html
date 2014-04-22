@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>iOS Development</title>
+    <meta name="description" content="A talk on iOS development">
+    <meta name="author" content="Amit Burstein">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700">
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/night.css" id="theme">
+    <link rel="stylesheet" href="lib/css/tomorrow-night.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <div class="slides">
+        <section>
+          <h1>iOS Development</h1>
+          <a href="#">URL</a>
+          <br><br>
+          Amit Burstein<br>
+          <a href="http://twitter.com/amitburst">@amitburst</a>
+        </section>
+
+        <section>
+          <h2>Outline</h2>
+          <br>
+          <ul>
+            <li class="fragment">Motivation</li>
+            <li class="fragment">Objective-C</li>
+            <li class="fragment">iOS</li>
+            <li class="fragment">Demo</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Why Develop for iOS?</h2>
+          <br>
+          <ul>
+            <li class="fragment">40% of U.S. smartphone market share</li>
+            <li class="fragment">800+ apps downloaded <i>per second</i></li>
+            <li class="fragment">87% of devices using iOS 7</li>
+            <li class="fragment">Higher revenue potentials</li>
+          </ul>
+        </section>
+
+        <!-- Example of nested vertical slides -->
+        <section>
+          <img src="http://b2b.cbsimg.net/blogs/chartoftheday_22082012_amount_of_money_spend_on_apps_by_android_and_ios_users_n.jpeg" alt="Money spent on apps">
+        </section>
+
+        <section>
+          <h2>How to Develop for iOS?</h2>
+          <br>
+          <ul>
+            <li class="fragment" data-fragment-index="0">Xcode</li>
+            <ul class="fragment" data-fragment-index="0">
+              <li>Most widely used and supported</li>
+              <li>Objective-C</li>
+            </ul>
+            <li class="fragment" data-fragment-index="1">Xamarin</li>
+            <ul class="fragment" data-fragment-index="1">
+              <li>Large developer community</li>
+              <li>C# on .NET framework</li>
+            </ul>
+            <li class="fragment" data-fragment-index="2">PhoneGap / Appcelerator Titanium</li>
+            <ul class="fragment" data-fragment-index="2">
+              <li>Develop once for all platforms</li>
+              <li>HTML, CSS, JavaScript</li>
+            </ul>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Objective-C</h2>
+          <br>
+          <ul>
+            <li>Object-oriented language</li>
+            <li>Developed in early 1980s</li>
+            <li>Popularized through NeXT for NeXTSTEP OS</li>
+            <li>Strict <i>superset</i> of C</li>
+            <li>Compiled with Clang on LLVM</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Let's Learn Some Objective-C!</h2>
+        </section>
+
+        <section>
+          <h2>Hello, World!</h2>
+          <br>
+          <pre><code data-trim>
+//
+// main.m
+//
+
+#include &lt;Foundation/Foundation.h&gt;
+
+int main(int argc, const char **argv) {
+    NSString *message = @"Hello, World!";
+    NSLog(@"%@", message);
+
+    return 0;
+}
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>Objective-C Features</h2>
+          <br>
+          <ul>
+            <li><i>Everything in C</i></li>
+            <li>Objects</li>
+            <li>Methods</li>
+            <li>Inheritance</li>
+            <li>Properties</li>
+            <li>Protocols</li>
+            <li>Categories</li>
+            <li>Collections</li>
+            <li>Blocks (Closures)</li>
+            <li>ARC</li>
+            <li>...</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Methods</h2>
+          <br>
+          <p>Objective-C</p>
+          <pre><code data-trim>
+[myData someMethod];
+[myData writeToFile:@"/tmp/log.txt" atomically:NO];
+NSString *str = [NSString string];
+[NSString stringWithFormat:[myData someMethod]];            
+          </code></pre>
+          <br>
+          <p>Java</p>
+          <pre><code data-trim>
+myData.someMethod();
+myData.write("/tmp/log.txt", false);
+String str = String.valueOf('');
+String.valueOf(myData.someMethod());            
+          </code></pre>
+        </section>
+
+        <section>
+          <section>
+            <h2>Foundation Data Structures</h2>
+            <br>
+            <p>NSNumber</p>
+            <pre><code data-trim>
+NSNumber *anInt = [NSNumber numberWithInt:23425];
+NSNumber *aFloat = @25.45f;            
+            </code></pre>
+            <br>
+            <p>NSArray</p>
+            <pre><code data-trim>
+NSArray *friends = @[@"Alice", @"Bob", @"Carl", @"Rasputin"];
+for (NSString *friend : friends) {
+    NSLog(@"%@", friend);
+}            
+            </code></pre>
+            <br>
+            <p>NSDictionary</p>
+            <pre><code data-trim>
+NSDictionary *friendsAges = @{
+    @"Alice" : @21,
+    @"Bob" : @20,
+    @"Carl" : @20,
+    @"Rasputin" : @46
+};
+NSLog(@"%@", friendsAges[@"Alice"]);            
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Foundation Data Structures</h2>
+            <br>
+            <ul>
+              <li>NSObject</li>
+              <li>NSNumber</li>
+              <li>NSString</li>
+              <li>NSArray</li>
+              <li>NSMutableArray</li>
+              <li>NSDate</li>
+              <li>NSDictionary</li>
+              <li>NSMutableDictionary</li>
+              <li>NSSet</li>
+              <li>NSMutableSet</li>
+              <li>NSHashTable</li>
+              <li>...</li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>nil vs. NULL</h2>
+          <br>
+          <ul>
+            <li>Both represent empty pointer</li>
+            <li>Use nil for empty Objective-C objects</li>
+            <li>USe NULL for empty native C-style pointers</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>id and Class Types</h2>
+          <br>
+          <pre><code data-trim>
+id mysteryObject = @"I'm actually an NSString";
+NSLog(@"%@", [mysteryObject description]);     
+          </code></pre>
+          <br>
+          <ul>
+            <li>Generic object data type</li>
+            <li>Lose compile-time information about the object</li>
+            <li>Don't need the asterisk</li>
+          </ul>
+          <br>
+          <br>
+          <pre><code data-trim>
+Class targetClass = [NSString class];
+id mysteryObject = [NSNumber numberWithInt:5];
+NSLog([mysteryObject isKindOfClass:targetClass] ? @"YES" : @"NO");  
+          </code></pre>
+          <br>
+          <ul>
+            <li>Classes are objects</li>
+            <li>Allows for weak typing, like id does</li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h2>Classes</h2>
+            <br>
+            <p>Person.h</p>
+            <pre><code data-trim>
+@import Foundation;
+
+@interface Person : NSObject
+
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSNumber *age;
+@property (nonatomic, getter = isEmployed) BOOL employed;
+
++ (NSNumber *)someStaticMethod; 
+
+- (instancetype)initWithName:(NSString *)name andAge:(NSNumber *)age;
+- (void)sayHello;
+
+@end
+            </code></pre>
+          </section>
+
+          <section>
+            <h2>Classes</h2>
+            <br>
+            <p>Person.m</p>
+            <pre><code data-trim>
+#import "Person.h"
+
+@implementation Person
+
+- (instancetype)initWithName:(NSString *)name andAge:(NSNumber *)age {
+    if (self = [super init]) {
+        _name = name;
+        _age = age;
+    }
+    
+    return self;
+}
+
+- (void)sayHello {
+    NSLog(@"Hello, %@!", self.name);
+}
+
+@end
+            </code></pre>
+            <pre><code data-trim>
+Person *bob = [[Person alloc] initWithName:@"Bob" andAge:@21];
+[bob sayHello];
+NSLog(@"%@", bob.age);
+bob.age = @23;
+NSLog(@"%@", bob.age);    
+            </code></pre>
+          </section>
+        </section>
+
+        <section>
+          <h2>Blocks</h2>
+          <br>
+          <pre><code data-trim>
+int multiplier = 7;
+int (^myBlock)(int) = ^(int num) {
+    return num * multiplier;
+};
+
+printf("%d", myBlock(3));
+          </code></pre>
+          <br>
+          <ul>
+            <li>Similar to standard C functions</li>
+            <li>May contain variable bindings</li>
+            <li>Particularly useful as callbacks</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Let's Move on to iOS!</h2>
+        </section>
+
+        <section>
+          <section>
+            <h2>iOS History</h2>
+            <br>
+            <ul>
+              <li>Steve Jobs introduced the iPhone in January 2007</li>
+              <li>First smartphone with touch as primary interaction model</li>
+              <li>First iPad released in 2010</li>
+              <li>All iOS iterations brought iOS SDK improvements</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>iOS History</h2>
+            <br>
+            <ul>
+              <li>iOS 1 - Core iOS UI, multitouch gestures</li>
+              <li>iOS 2 - App Store, iOS SDK</li>
+              <li>iOS 3 - Push notifications</li>
+              <li>iOS 4 - Multitasking, Retina display support</li>
+              <li>iOS 5 - Siri, iMessage, iCloud</li>
+              <li>iOS 6 - Apple Maps...</li>
+              <li>iOS 7 - Major design overhaul, SpriteKit</li>
+              <li>iOS 8 - ???</li>
+            </ul>
+          </section>
+
+          <section>
+            <img src="http://www.iclarified.com/images/news/31178/126652/126652-1280.png" alt="iOS homescreen evolution">
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>iOS Architecture</h2>
+            <br>
+            <img src="https://developer.apple.com/library/ios/documentation/miscellaneous/conceptual/iphoneostechoverview/Art/SystemLayers_2x.png" alt="iOS Architecture">
+          </section>
+
+          <section>
+            <h2>iOS Architecture</h2>
+            <br>
+            <ul>
+              <li class="fragment" data-fragment-index="3">Cocoa Touch</li>
+              <ul class="fragment" data-fragment-index="3">
+                Multi-touch, UIKit, view hierarchy, Core Motion, ...
+              </ul>
+              <li class="fragment" data-fragment-index="2">Media</li>
+              <ul class="fragment" data-fragment-index="2">
+                Core Animation, video playback, OpenGL ES, Core Audio, ...
+              </ul>
+              <li class="fragment" data-fragment-index="1">Core Services</li>
+              <ul class="fragment" data-fragment-index="1">
+                <li>Collections, Core Location, threading, networking, ...</li>
+              </ul>
+              <li class="fragment" data-fragment-index="0">Core OS</li>
+              <ul class="fragment" data-fragment-index="0">
+                <li>Mach kernel, file system, I/O, Security, ...</li>
+              </ul>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <h2>Now Let's Make Something Cool!</h2>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
