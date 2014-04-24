@@ -89,7 +89,7 @@
           </ul>
         </section>
 
-        <section>
+        <section data-background="#9b59b6">
           <h2>Let's Learn Some Objective-C!</h2>
         </section>
 
@@ -138,7 +138,7 @@ int main(int argc, const char **argv) {
 [myData someMethod];
 [myData writeToFile:@"/tmp/log.txt" atomically:NO];
 NSString *str = [NSString string];
-[NSString stringWithFormat:[myData someMethod]];            
+[NSString stringWithFormat:[myData someMethod]];
           </code></pre>
           <br>
           <p>Java</p>
@@ -146,7 +146,7 @@ NSString *str = [NSString string];
 myData.someMethod();
 myData.write("/tmp/log.txt", false);
 String str = String.valueOf('');
-String.valueOf(myData.someMethod());            
+String.valueOf(myData.someMethod());
           </code></pre>
         </section>
 
@@ -157,7 +157,7 @@ String.valueOf(myData.someMethod());
             <p>NSNumber</p>
             <pre><code data-trim>
 NSNumber *anInt = [NSNumber numberWithInt:23425];
-NSNumber *aFloat = @25.45f;            
+NSNumber *aFloat = @25.45f;
             </code></pre>
             <br>
             <p>NSArray</p>
@@ -165,7 +165,7 @@ NSNumber *aFloat = @25.45f;
 NSArray *friends = @[@"Alice", @"Bob", @"Carl", @"Rasputin"];
 for (NSString *friend : friends) {
     NSLog(@"%@", friend);
-}            
+}
             </code></pre>
             <br>
             <p>NSDictionary</p>
@@ -176,7 +176,7 @@ NSDictionary *friendsAges = @{
     @"Carl" : @20,
     @"Rasputin" : @46
 };
-NSLog(@"%@", friendsAges[@"Alice"]);            
+NSLog(@"%@", friendsAges[@"Alice"]);
             </code></pre>
           </section>
 
@@ -215,7 +215,7 @@ NSLog(@"%@", friendsAges[@"Alice"]);
           <br>
           <pre><code data-trim>
 id mysteryObject = @"I'm actually an NSString";
-NSLog(@"%@", [mysteryObject description]);     
+NSLog(@"%@", [mysteryObject description]);
           </code></pre>
           <br>
           <ul>
@@ -228,7 +228,7 @@ NSLog(@"%@", [mysteryObject description]);
           <pre><code data-trim>
 Class targetClass = [NSString class];
 id mysteryObject = [NSNumber numberWithInt:5];
-NSLog([mysteryObject isKindOfClass:targetClass] ? @"YES" : @"NO");  
+NSLog([mysteryObject isKindOfClass:targetClass] ? @"YES" : @"NO");
           </code></pre>
           <br>
           <ul>
@@ -251,7 +251,7 @@ NSLog([mysteryObject isKindOfClass:targetClass] ? @"YES" : @"NO");
 @property (strong, nonatomic) NSNumber *age;
 @property (nonatomic, getter = isEmployed) BOOL employed;
 
-+ (NSNumber *)someStaticMethod; 
++ (NSNumber *)someStaticMethod;
 
 - (instancetype)initWithName:(NSString *)name andAge:(NSNumber *)age;
 - (void)sayHello;
@@ -274,7 +274,7 @@ NSLog([mysteryObject isKindOfClass:targetClass] ? @"YES" : @"NO");
         _name = name;
         _age = age;
     }
-    
+
     return self;
 }
 
@@ -289,7 +289,7 @@ Person *bob = [[Person alloc] initWithName:@"Bob" andAge:@21];
 [bob sayHello];
 NSLog(@"%@", bob.age);
 bob.age = @23;
-NSLog(@"%@", bob.age);    
+NSLog(@"%@", bob.age);
             </code></pre>
           </section>
         </section>
@@ -313,7 +313,7 @@ printf("%d", myBlock(3));
           </ul>
         </section>
 
-        <section>
+        <section data-background="#e67e22">
           <h2>Let's Move on to iOS!</h2>
         </section>
 
@@ -374,13 +374,13 @@ printf("%d", myBlock(3));
               </ul>
               <li class="fragment" data-fragment-index="0">Core OS</li>
               <ul class="fragment" data-fragment-index="0">
-                <li>Mach kernel, file system, I/O, Security, ...</li>
+                <li>Mach kernel, file system, I/O, security, ...</li>
               </ul>
             </ul>
           </section>
         </section>
 
-        <section>
+        <section data-background="#1abc9c">
           <h2>Now Let's Make Something Cool!</h2>
         </section>
 
